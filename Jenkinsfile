@@ -4,6 +4,7 @@ pipeline{
     stage("Hello world"){
       steps{
         echo 'Hello Kivi'
+        sh 'php -v'
       }
     }
   }
