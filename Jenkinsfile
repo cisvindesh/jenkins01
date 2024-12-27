@@ -1,10 +1,23 @@
 pipeline{
   agent any
   stages{
-    stage("Hello world"){
+    stage("Build"){
       steps{
-        echo 'Hello Kivi'
-        sh 'php -v'
+        echo 'Building application'
+      }
+    }
+    stage("Test"){
+      steps{
+        echo 'Testing the application'
+      }
+    }
+    stage("Deploy"){
+      steps{
+        echo 'Deploying the application'
+        script {
+          def test = 2+2 > 3?' cool': 'not cool'
+          echo test
+        }
       }
     }
   }
